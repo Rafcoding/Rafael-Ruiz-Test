@@ -64,7 +64,7 @@ Some sections were more challenging than others but it was a great experience ov
 
 * Adding machtheight on the elements with diferent content size, for instance on repetitive blocks where the paragraph lenght may vary.
 
-* adding some JS to the navbar, reducing the height when scrolling down or hidding and showing according to the scroll.
+* Adding some JS to the navbar, reducing the height when scrolling down or hidding and showing according to the scroll.
 
 * Make the code DRYer.
 
