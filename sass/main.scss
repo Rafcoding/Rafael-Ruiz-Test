@@ -222,6 +222,7 @@ p.phone {
 
 .hero {
 	padding: 20px 20px 87px;
+	position: relative;
 
 	@include respond-above($breakpoint-sm) {
 		padding: 242px 40px 93px;
@@ -340,12 +341,19 @@ p.phone {
 				right: -20px;
 			}
 
-
 			img {
 				width: 100%;
 			}
 		}
 	}	
+
+	.figure-one {
+		height: 420px;
+		z-index: -1;
+		top: 345px;
+		right: 0;
+		position: absolute;
+	}
 }
 
 // ================================
@@ -356,8 +364,8 @@ p.phone {
 	position: relative;
 	padding: 0 20px 68px;
 
-	@include respond-above($breakpoint-md) {
-		padding: 0 40px 45px;
+	@include respond-above($breakpoint-sm) {
+		padding: 0px 40px 45px;
 	}
 
 	@include respond-above($breakpoint-lg) {
@@ -587,7 +595,7 @@ p.phone {
 			.fig-three {
 				max-width: 210px;
 				z-index: -1;
-				bottom: -30%;
+				bottom: -27%;
 				left: 28%;
 				position: absolute;
 			}

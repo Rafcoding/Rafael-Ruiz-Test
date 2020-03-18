@@ -133,7 +133,8 @@ p.phone .icon {
     z-index: -1; }
 
 .hero {
-  padding: 20px 20px 87px; }
+  padding: 20px 20px 87px;
+  position: relative; }
   @media (min-width: 40em) {
     .hero {
       padding: 242px 40px 93px; } }
@@ -229,13 +230,19 @@ p.phone .icon {
         right: -20px; } }
     .hero .image-side .img-wrapper img {
       width: 100%; }
+  .hero .figure-one {
+    height: 420px;
+    z-index: -1;
+    top: 345px;
+    right: 0;
+    position: absolute; }
 
 .business-info {
   position: relative;
   padding: 0 20px 68px; }
-  @media (min-width: 64em) {
+  @media (min-width: 40em) {
     .business-info {
-      padding: 0 40px 45px; } }
+      padding: 0px 40px 45px; } }
   @media (min-width: 84em) {
     .business-info {
       padding: 0 115px 45px; } }
@@ -385,7 +392,7 @@ p.phone .icon {
     .how-it-works .image-side .content-wrapper .fig-three {
       max-width: 210px;
       z-index: -1;
-      bottom: -30%;
+      bottom: -27%;
       left: 28%;
       position: absolute; }
   .how-it-works h2.title {
