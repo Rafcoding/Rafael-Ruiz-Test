@@ -45,7 +45,7 @@ Translating desing into code.
 
 * Mobile first approach using Foundation Zurb
 
-* for consistency:
+* For consistency:
 - I have decided to apply the same margins or paddings to the elements which are repeated for instance on businessinfo and how it works sections.
 - I have rounded all pixel with decimals to the nearest integer.
 
