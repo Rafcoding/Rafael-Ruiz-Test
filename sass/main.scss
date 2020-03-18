@@ -1,0 +1,1047 @@
+@charset 'UTF-8';
+
+// A map of breakpoints.
+$breakpoint-sm: 40em; // 640px
+$breakpoint-md: 64em; // 1024px
+$breakpoint-lg: 84em; // 1184px
+
+@mixin respond-above($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin translate($x, $y) {
+  -webkit-transform: translate($x, $y);
+  -moz-transform: translate($x, $y);
+  -ms-transform: translate($x, $y);
+  -o-transform: translate($x, $y);
+  transform: translate($x, $y);
+}
+
+@mixin translateY($y) {
+  -webkit-transform: translateY($y);
+  -moz-transform: translateY($y);
+  -ms-transform: translateY($y);
+  -o-transform: translateY($y);
+  transform: translateY($y);
+}
+
+@mixin transition($property) {
+  -webkit-transition: $property;
+  -moz-transition: $property;
+  -ms-transition: $property;
+  -o-transition: $property;
+  transition: $property;
+}
+
+// Colours
+$black: #000000;
+$white: #ffffff;
+$green: #00B67A;
+$red:  #FB534A;
+$blue-text: #102F56;
+$blue-bg: #EEF3F7;
+$blue-hr-business-info-divider-how: #81B4EB;
+$blue-number-one-reviewer: #699FE3;
+$blue-number-two: #4D809E;
+$blue-hr-partners: #81B4EA;
+$blue-hr-contact: #86B7EB;
+$blue-footer-a: #BFD4E0;
+$blue-phone-mail: #143B6B;
+
+body {
+	position: relative;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 150%;
+	text-align: center;
+	font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+}
+
+.content-wrapper {
+	max-width: 1210px;
+	margin: 0 auto;
+	width: 100%;
+}
+
+h1, .h1 {
+	font-weight: bold;
+	color: $blue-text;
+	font-size: 32px;
+	line-height: 120%;
+	text-align: center;
+
+	@include respond-above($breakpoint-md) {
+		font-size: 56px;
+	}
+}
+
+h2, .h2 {
+	font-style: normal;
+	font-weight: bold;
+	font-size: 32px;
+	line-height: 120%;
+	text-align: center;
+}
+
+h3, .h3 {
+	font-style: normal;
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 120%;
+	text-align: center;
+}
+
+h4, .h4 {
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 150%;
+	text-align: center;
+}
+
+// ====================================================
+// it is used on the navbar & on the contact section
+
+p.phone, p.mail {
+	position: relative;
+	padding-bottom: 0;
+	font-size: 18px;
+	line-height: 150%;
+	font-weight: bold;
+	color: $blue-phone-mail;
+	display: inline-flex;
+	margin-bottom: 0;
+}
+
+p.phone {
+
+	a {
+		color: $blue-phone-mail;
+	}
+
+	.icon {
+		content: "";
+		width: 15.76px;
+		height: 28.77px;
+		background-image: url('../img/phone.png');
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 100%;
+		margin-right: 5px;
+		margin-top: -2px;
+	}
+}
+// it is used on the navbar & on the contact section
+// ====================================================
+
+// ====================
+// 		NAVBAR
+// ====================
+
+.navbar	{
+	background: transparent;
+	position: relative;
+	height: 100px;
+
+	@include respond-above($breakpoint-sm) {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background: white;
+		position: fixed;
+		width: 100%;
+		z-index: 2;
+		left: 0;
+		padding: 0 40px;
+		height: 110px
+	}
+
+	@include respond-above($breakpoint-lg) {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background: white;
+		position: fixed;
+		width: 100%;
+		z-index: 2;
+		left: 0;
+		padding: 0 115px;
+	}
+
+
+
+	.nav {
+
+		@include respond-above($breakpoint-sm) {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.logo-wrapper {
+			position: absolute;
+			display: block;
+			width: 127px;
+			left: 50%;
+			@include translate(-50%, 0); 
+			top: 34px;
+
+			@include respond-above($breakpoint-sm) {
+				position: relative;
+				width: 120px;
+				display: flex;
+				left: 0;
+				@include translate(0, 0);
+				top: 0;
+			}
+
+			img {
+				width: 100%;
+			}
+		}
+
+		p.phone {
+			margin-bottom: 0;
+		}
+	}
+
+	.grey-circle {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 161px;
+		z-index: -1;
+	}	
+}
+
+// ====================
+// 	   HERO SECTION
+// ====================
+
+.hero {
+	padding: 20px 20px 87px;
+
+	@include respond-above($breakpoint-sm) {
+		padding: 242px 40px 93px;
+	}
+
+	@include respond-above($breakpoint-lg) {
+		padding: 242 115px 93px;
+	}
+
+	.copy-side {
+		
+		h1 {
+			margin-bottom: 36px;
+
+			@include respond-above($breakpoint-sm) {
+				text-align: left;
+				margin-bottom: 28px;
+			}
+		}
+
+		h4 {
+			margin-bottom: 43px;
+
+			@include respond-above($breakpoint-sm) {
+				text-align: left;
+				margin-bottom: 40px;
+				margin-right: 20px;
+			}
+		}
+
+		.img-wrapper {
+			margin: 0 auto;
+			max-height: 116px;
+			max-width: 162px;
+
+			@include respond-above($breakpoint-sm) {
+				max-width: 269px;
+				max-height: 75px;
+				margin-left: 0;
+			}
+
+			img {
+				width: 100%;
+			} 
+		}
+
+		hr {
+			background: #E6E6E6;
+			width: 46px;
+			margin-left: 0;
+			border-radius: 8px;
+			border: 2px solid #E6E6E6;
+			margin-bottom: 30px;
+		}
+
+		.cta-wrapper {
+			width: 100%;
+			margin-bottom: 50px;
+
+			.cta {
+				margin: 0 auto;
+				background: $red;
+				box-shadow: 0px 15px 35px rgba(112, 112, 112, 0.45);
+				border-radius: 8px;
+				width: 250px;
+				height: 48px;
+				display: flex;
+				align-items: center;
+
+				@include respond-above($breakpoint-sm) {
+					margin-left: 0;
+					margin-bottom: 101px;
+				}
+
+				a {
+					color: $white;
+					font-style: normal;
+					font-weight: bold;
+					font-size: 18px;
+					line-height: 150%;
+					margin: 0 auto;
+				}
+
+				&:hover {
+					text-decoration: none;
+					@include translateY(3px);
+					box-shadow: 0 4px 4px rgba(0,0,0,.35);
+					@include transition(.2s all);
+				}
+			}
+		}
+	}
+
+	.image-side {
+		position: relative;
+
+		.img-wrapper {
+			@include respond-above($breakpoint-sm) {
+				max-width: 520px;
+				position: absolute;
+				top: -85px;
+				right: -20px
+			}
+
+			@include respond-above($breakpoint-sm) {
+				max-width: 520px;
+				position: absolute;
+				top: -94px;
+				right: -20px;
+			}
+
+			@include respond-above($breakpoint-lg) {
+				max-width: 520px;
+				position: absolute;
+				top: -94px;
+				right: -20px;
+			}
+
+
+			img {
+				width: 100%;
+			}
+		}
+	}	
+}
+
+// ================================
+// 		BUSINESS INFO SECTION
+// ================================
+
+.business-info {
+	position: relative;
+	padding: 0 20px 68px;
+
+	@include respond-above($breakpoint-md) {
+		padding: 0 40px 45px;
+	}
+
+	@include respond-above($breakpoint-lg) {
+		padding: 0 115px 45px;
+	}
+
+	.content-wrapper {
+		background: $blue-bg; 
+		border-radius: 16px;
+		padding: 61px 20px 32px;
+
+		@include respond-above($breakpoint-md) {
+			padding: 61px 20px 93px;
+		}
+
+		h2 {
+			color: $blue-text;
+			margin-bottom: 42px;
+
+			@include respond-above($breakpoint-md) {
+				padding: 0 106px;
+				margin-bottom: 40px;
+			}
+		}
+
+		hr {
+			width: 45px;
+			height: 2px;
+			text-align: center;
+			background: $blue-hr-business-info-divider-how;
+			margin-bottom: 47px;
+
+			@include respond-above($breakpoint-md) {
+				width: 60px;
+				margin-bottom: 53px;
+			}
+		}
+	}
+
+	.info-wrapper {
+		text-align: center;
+
+		.img-one-wrapper {
+			margin: 0 auto;
+			width: 76px;
+			height: 74px;
+
+			img {
+				width: 100%
+			}
+		}
+
+		.img-two-wrapper {
+			margin: 0 auto;
+			width: 75px;
+			height: 75px;
+
+			img {
+				width: 100%
+			}
+		}
+
+		.img-three-wrapper {
+			margin: 0 auto;
+			width: 74px;
+			height: 74px;
+
+			img {
+				width: 100%
+			}
+		}
+
+		p {
+			padding-bottom: 44px;
+			max-width: 247px;
+			margin: 0  auto;
+
+			@include respond-above($breakpoint-md) {
+				max-width: 285px;
+				padding-bottom: 0;
+			}
+		}
+
+		h3 {
+			margin-top: 25px;
+			margin-bottom: 30px;
+
+			@include respond-above($breakpoint-md) {
+				margin-top: 33px;
+				margin-bottom: 26px;
+			}
+		}
+	}
+
+	.fig-one {
+		height: 360px;
+		z-index: -1;
+		top: 108px;
+		left: 0;
+		position: absolute;
+	}
+
+	.fig-two {
+		height: 360px;
+		z-index: -1;
+		bottom: 618px;
+		right: 0;
+		position: absolute;
+	}
+
+	.fig-three {
+		height: 240px;
+		z-index: -1;
+		bottom: 0;
+		left: 0;
+		position: absolute;
+	}
+}
+
+// =========================
+// 		REVIEWS SECTION
+// =========================
+
+.reviews {
+	margin-bottom: 119px;
+	padding: 0 20px;
+
+	@include respond-above($breakpoint-md) {
+		margin-bottom: 84px;
+	}
+
+	.review-wrapper {
+
+		.img-wrapper {
+			max-width: 237px;
+			margin: 0 auto;
+
+			@include respond-above($breakpoint-md) {
+				max-width: 139px;
+				margin-bottom: -26px;
+			}
+
+			img {
+				width: 100%;
+			}
+		}
+
+		.review-copy {
+			margin: 10px 0 42px;
+			font-weight: bold;
+			font-size: 30px;
+			line-height: 120%;
+			color: $blue-text;
+
+			@include respond-above($breakpoint-md) {
+				max-width: 1008px;
+				margin: 0 auto;
+			}
+		}
+
+		h3 {
+			color: $blue-number-one-reviewer;
+			margin-bottom: 0;
+
+			@include respond-above($breakpoint-md) {
+				margin-top: 55px;
+			}
+		}
+	}
+
+	.slick-slider {
+		height: max-content;
+	}
+}
+
+
+// ============================
+// 		HOW IT WORKS SECTION
+// ============================
+	
+.how-it-works {
+	padding: 0 20px;
+	text-align: center;	
+	position: relative;
+
+	@include respond-above($breakpoint-md) {
+		padding-bottom: 110px;
+		padding-right: 40px;
+	}
+
+	@include respond-above($breakpoint-lg) {
+		padding-right: 44px;
+	}
+
+	.fig-one {
+		max-width: 180px;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		position: absolute;
+	}
+
+	.image-side {
+
+		.content-wrapper {
+			position: relative;
+
+
+			.img-wrapper {
+				max-width: 858px;;
+				height: auto;
+				margin-top: -22px;
+
+				img {
+					width: 100%;
+				}
+			}
+
+			.fig-two {
+				max-width: 200px;
+				z-index: -1;
+				bottom: -2%;
+				right: -4%;
+				position: absolute;
+			}
+
+			.fig-three {
+				max-width: 210px;
+				z-index: -1;
+				bottom: -30%;
+				left: 28%;
+				position: absolute;
+			}
+		}
+	}
+
+	h2.title {
+		margin-bottom: 30px;
+
+		@include respond-above($breakpoint-md) {
+			margin-bottom: 28px;
+		}
+	}
+
+	hr {
+		margin-bottom: 53px;
+		background: $blue-hr-business-info-divider-how;
+		width: 45px;
+		height: 2px;
+
+		@include respond-above($breakpoint-md) {
+			width: 60px;
+			margin-bottom: 69px;
+		}
+	}
+
+	.application-steps {
+
+		@include respond-above($breakpoint-md) {
+			margin-top: 11px;
+		}
+
+		.h1 {
+			font-style: normal;
+			font-weight: bold;
+			font-size: 56px;
+			line-height: 120%;
+
+			@include respond-above($breakpoint-md) {
+				font-size: 32px;
+			}
+		}
+
+		.first {
+
+			@include respond-above($breakpoint-md) {
+				position: relative;
+			}
+
+			.h1 {
+				color: $blue-number-one-reviewer;
+
+				@include respond-above($breakpoint-md) {
+					position: relative;
+
+					&:after {
+						content: "";
+						position: absolute;
+						width: 5px;
+						height: 136px;
+						background-image: url('../img/hor-divider.png');
+						background-position: center;
+						background-repeat: no-repeat;
+						background-size: 100%;						
+						top: 47px;
+						left: 52%;
+						transform: translate(-50%, 0);
+					}
+				}
+			}
+		}
+
+		.second {
+
+			@include respond-above($breakpoint-md) {
+				position: relative;
+			}
+
+			.h1 {
+				color: $blue-number-two;
+
+				@include respond-above($breakpoint-md) {
+					position: relative;
+
+					&:after {
+						content: "";
+						position: absolute;
+						width: 5px;
+						height: 136px;
+						background-image: url('../img/hor-divider.png');
+						background-position: center;
+						background-repeat: no-repeat;
+						background-size: 100%;
+						top: 47px;
+						left: 52%;
+						transform: translate(-50%, 0);
+					}
+				}
+			}
+		}
+
+		.third {
+
+			.h1 {
+				color: $green;
+			}
+		}
+
+		p {
+			max-width: 266px;
+			margin: 0 auto;
+			font-style: normal;
+			font-weight: 300;
+			font-size: 18px;
+			line-height: 150%;
+			padding-bottom: 43px;
+
+			@include respond-above($breakpoint-md) {
+				text-align: left;
+				margin-left: 0;
+				max-width: 408px;
+				font-size: 16px;
+				padding-bottom: 58px;
+			}
+		}
+
+		h3 {
+			margin-top: 22px;
+			margin-bottom: 29px;
+
+			@include respond-above($breakpoint-md) {
+				margin-top: 5px;
+				margin-bottom: 28px;
+
+				text-align: left;
+			}
+		}
+	}
+}
+
+
+// ==========================
+// 		PARTNERS SECTION
+// ==========================
+
+.partners {
+	padding: 0 20px 187px;
+	position: relative;
+
+	@include respond-above($breakpoint-lg) {
+		padding-bottom: 312px;
+	}
+
+	h2 {
+		padding: 90px 0 49px;
+		margin-bottom: 0;
+
+		@include respond-above($breakpoint-lg) {
+			padding: 90px 0 31px;
+		}
+	}
+
+	.semi-circle {
+		position: absolute;
+		top: -116px;;
+		right: 0;
+		height: 240px;
+	}
+
+	hr {
+		width: 60px;
+		height: 2px;
+		background: $blue-hr-partners;
+		margin-top: 0;
+		margin-bottom: 53px;
+	}
+
+	.logos-box {
+
+		@include respond-above($breakpoint-sm) {
+			max-width: 830px;
+			margin: 0 auto;
+		}
+
+		.forbes {
+			margin: 0 auto 66px;
+			max-width: 108px; 
+
+			@include respond-above($breakpoint-md) {
+				margin: 0 auto 45px;
+			}
+
+			img {
+				width: 100%;
+			}
+		}
+
+		.times {
+			margin: 0 auto 66px;
+			max-width: 208px; 
+
+			@include respond-above($breakpoint-md) {
+
+			}
+
+			img {
+				width: 100%;
+			}
+		}
+
+		.wired {
+			margin: 0 auto 66px;
+			max-width: 125px; 
+
+			@include respond-above($breakpoint-md) {
+				margin: 0 auto 43px;
+			}
+
+			img {
+				width: 100%;
+			}
+		}
+
+		.yahoo {
+			margin: 0 auto 66px;
+			max-width: 188px; 
+
+			@include respond-above($breakpoint-md) {
+
+			}
+
+			img {
+				width: 100%;
+			}
+		}
+
+		.trust-pilot {
+			margin: 0 auto 66px;
+			max-width: 173px; 
+
+			@include respond-above($breakpoint-md) {
+				margin-top: -20px;
+				max-width: 162px; 
+			}
+
+			img {
+				width: 100%;
+			}
+		}
+	}
+}
+
+
+// ========================
+// 		CONTACT SECTION
+// ========================
+
+.contact {
+	background: $blue-bg;
+	padding: 106px 20px 65px;
+	position: relative;
+
+	.img-wrapper {
+		position: absolute;
+		top: -179px;
+		left: 50%;
+		@include translate(-50%, 0);
+		width: 344px;
+
+		@include respond-above($breakpoint-lg) {
+			top: -286px;
+			width: 512px;
+		}
+
+		img {
+			width: 100%;
+		}
+	}
+
+	h2 {
+		max-width: 258px;
+		margin: 0 auto;
+		padding-bottom: 40px;
+
+		@include respond-above($breakpoint-md) {
+			max-width: 100%;
+		}
+	}
+
+	p.contact-details {
+		font-size: 16px;
+		line-height: 150%;
+		max-width: 310px;
+		margin: 0 auto;
+		padding-bottom: 56px;
+
+		@include respond-above($breakpoint-md) {
+			max-width: 546px;
+		}
+	}
+
+	.contact-ways {
+
+		@include respond-above($breakpoint-md) {
+			position: absolute;
+			height: 100px;
+		}
+
+		@include respond-above($breakpoint-md) {
+			display: flex;
+			position: relative;
+			max-width: 570px;
+			justify-content: space-between;
+			margin: 0 auto;
+			align-items: center;
+		}
+
+		hr {
+			height: 2px;
+			width: 36px;
+			background: $blue-hr-contact;
+			margin: 45px auto;
+
+			@include respond-above($breakpoint-md) {
+				position: absolute;
+				height: 100px;
+				width: 2px;
+				margin: 0 auto;
+				left: 50%;
+				transform: translate(-50%, 0)
+			}	
+		}
+
+		p.phone {
+
+			@include respond-above($breakpoint-md) {
+				margin-right: 78px;
+			}
+		}
+
+		p.mail {
+
+			a {
+				color: #143B6B;
+			}
+
+			.icon {
+				content: "";
+				width: 26px;
+				height: 20px;
+				background-image: url('../img/email.png');
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: 100%;
+				margin-top: 3px;
+				margin-right: 10px;
+			}
+		}
+	}
+}
+
+
+
+// ====================
+// 		FOOTER
+// ====================
+
+footer {
+	padding: 65px 27px 150px;
+	background: linear-gradient(180deg, #143B6B 0%, #0C2444 100%);
+	@include transition(0.3s all);
+
+	.logo-wrapper {
+		width: 138px;
+		height: 47px;
+		margin: 0 auto 15px;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	p.address {
+		max-width: 225px;
+		margin: 0 auto;
+		color: $white;
+		padding-bottom: 51px;
+		font-style: normal;
+		font-weight: 300;
+		font-size: 14px;
+		line-height: 150%;
+	}
+
+	ul {
+		margin: 0 auto;
+
+		@include respond-above($breakpoint-sm) {
+			display: flex;
+			justify-content: space-between;
+			max-width: 655px;
+		}
+
+		@include respond-above($breakpoint-md) {
+			max-width: 965px;
+		}
+
+		li {
+			list-style: none;
+			padding-bottom: 38px;
+
+			a {
+				color: $blue-footer-a;
+				font-style: normal;
+				font-weight: 300;
+				font-size: 16px;
+				line-height: 150%;
+				display: inline-block;
+
+				&:focus, &:hover {
+					color: $blue-footer-a;
+				}
+
+				&::after {
+					content: '';
+					display: block;
+					width: 0;
+					height: 1px;
+					background: $blue-footer-a;
+					@include transition(0.3s ease);
+				}
+
+				&:hover::after {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	p {
+		margin: 60px 0 0;
+		color: $white;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 150%;
+
+		@include respond-above($breakpoint-md) {
+			max-width: 1072px;
+			margin: 0 auto;
+		}
+
+	}
+}
+
+
+
+

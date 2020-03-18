@@ -1,0 +1,14 @@
+{
+  "name": "rafa-ruiz-iwoca-test",
+  "version": "1.0.0",
+  "description": "iwoca code test",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "author": "rafa ruiz",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.13.1"
+  }
+}
